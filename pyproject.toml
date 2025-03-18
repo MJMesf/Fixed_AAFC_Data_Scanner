@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "aafc_data_scanner"
+version = "1.0.0"
+description = ""
+authors = ["a-taillardat <alexis.taillardat@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+pandas = "^2.2.2"
+numpy = "^2.0.0"
+requests = "^2.32.3"
+urllib3 = "^2.2.2"
+openpyxl = "^3.1.5"
+tqdm = "^4.66.4"
+colorama = "^0.4.6"
+selenium = "^4.24.0"
+validators = "^0.34.0"
+
+[tool.poetry.group.test.dependencies]
+mypy = "^1.11.0"
+pandas-stubs = "^2.2.2.240603"
+types-requests = "^2.32.0.20240712"
+types-tqdm = "^4.66.0.20240417"
+types-colorama = "^0.4.15.20240311"
+pylint = "^3.3.1"
+
+[tool.poetry.group.executable-export.dependencies]
+pyinstaller = "^6.10.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[tool.poetry.scripts]
+aafc_data_scanner = "aafc_data_scanner.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-pyinstaller-plugin.scripts]
+aafc_data_scanner = "aafc_data_scanner/__main__.py"
